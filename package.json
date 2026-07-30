@@ -1,0 +1,8 @@
+{
+  "name": "rolldown-bare-return-labeled-block-repro",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "rolldown": "^1.2.1"
+  }
+}
