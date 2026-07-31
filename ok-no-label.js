@@ -1,7 +1,7 @@
-export function noLableOk() {
+(function() {
   {
     console.log('before return');
     return;
   }
   console.log('unreachable!');
-}
+})();

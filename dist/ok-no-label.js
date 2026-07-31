@@ -1,6 +1,5 @@
 //#region ok-no-label.js
-function noLableOk() {
+(function() {
 	console.log("before return");
-}
+})();
 //#endregion
-export { noLableOk };

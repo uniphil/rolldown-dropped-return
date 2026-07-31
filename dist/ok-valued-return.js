@@ -1,10 +1,9 @@
 //#region ok-valued-return.js
-function valuedOk() {
+(function() {
 	label: {
 		console.log("before return");
 		return 1;
 	}
 	console.log("unreachable!");
-}
+})();
 //#endregion
-export { valuedOk };

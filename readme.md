@@ -29,24 +29,23 @@ The code inputs and outputs are printed to the console; outputs are also in [`di
 #
 # input code (repro-bare-return.js):
 
-export function oops() {
+(function() {
   label: {
     console.log('before return');
     return;
   }
   console.log('unreachable!');
-}
+})();
 
 
 # code after rolldown build:
 
 //#region repro-bare-return.js
-function oops() {
+(function() {
   label: console.log("before return");
   console.log("unreachable!");
-}
+})();
 //#endregion
-export { oops };
 
 
 ###############
@@ -54,23 +53,22 @@ export { oops };
 #
 # input code (ok-no-label.js):
 
-export function noLableOk() {
+(function() {
   {
     console.log('before return');
     return;
   }
   console.log('unreachable!');
-}
+})();
 
 
 # code after rolldown build:
 
 //#region ok-no-label.js
-function noLableOk() {
+(function() {
   console.log("before return");
-}
+})();
 //#endregion
-export { noLableOk };
 
 
 ###############
@@ -78,27 +76,26 @@ export { noLableOk };
 #
 # input code (ok-valued-return.js):
 
-export function valuedOk() {
+(function() {
   label: {
     console.log('before return');
     return 1;
   }
   console.log('unreachable!');
-}
+})();
 
 
 # code after rolldown build:
 
 //#region ok-valued-return.js
-function valuedOk() {
+(function() {
   label: {
     console.log("before return");
     return 1;
   }
   console.log("unreachable!");
-}
+})();
 //#endregion
-export { valuedOk };
 ```
 </details>
 
